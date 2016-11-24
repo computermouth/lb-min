@@ -13,4 +13,8 @@ BUILD_ID=$(date)\n\
 VARIANT=\"retroC.H.I.P\"\n\
 VARIANT_ID=$(cat /etc/os-variant)\n" | tee /etc/os-release
 
+chmod u+s `which ping`
+
+#this is needs to be done after flash-kernel and before a kernel.deb is installed
+echo "NextThing C.H.I.P." > /etc/flash-kernel/machine
 
