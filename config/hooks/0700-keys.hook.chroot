@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -e /etc/rc.local.orig ]]; then sudo mv /etc/rc.local /etc/rc.local.orig; fi
+if [[ ! -e /etc/rc.local.orig ]]; then mv /etc/rc.local /etc/rc.local.orig; fi
 
 echo -e "#!/bin/sh\n\n\
 rm -f /etc/ssh/ssh_host_*\n\
@@ -10,7 +10,7 @@ rm -f /etc/ssh/ssh_host_*\n\
 /usr/bin/ssh-keygen -t ecdsa -N '' -f /etc/ssh/ssh_host_ecdsa_key\n\
 /usr/bin/ssh-keygen -t ed25519 -N '' -f /etc/ssh/ssh_host_ed25519_key\n\
 systemctl restart ssh\n\
-mv -f /etc/rc.local.orig /etc/rc.local\n" |sudo tee /etc/rc.local >/dev/null
+mv -f /etc/rc.local.orig /etc/rc.local\n" | tee /etc/rc.local >/dev/null
 
 chmod a+x /etc/rc.local
 
