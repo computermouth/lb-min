@@ -6,4 +6,7 @@ fi
 
 sudo lb build
 
-mv live-image-armhf.tar.tar rootfs.tar
+rm rootfs.tar
+
+pushd binary
+sudo tar -cf ../rootfs.tar .
