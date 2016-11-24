@@ -6,11 +6,11 @@ fi
 
 sudo lb build
 
-rm rootfs.tar
+rm live-image-armhf.tar.tar
 
 pushd binary
 sudo tar -cf ../rootfs.tar .
-
+popd
 
 CHIP_UBOOT_BRANCH=${CHIP_UBOOT_BRANCH:-production-mlc}
 
