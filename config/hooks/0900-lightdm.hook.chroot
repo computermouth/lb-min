@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed -s -i 's/#autologin-user=/autologin-user=chip/' /etc/lightdm/lightdm.conf
+sed -s -i 's/#autologin-user-timeout=0/autologin-user-timeout=0/' /etc/lightdm/lightdm.conf
+sed -s -i 's%#display-setup-script=%display-setup-script=/etc/X11/Xsetup%' /etc/lightdm/lightdm.conf
