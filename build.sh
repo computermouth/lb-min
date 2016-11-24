@@ -6,5 +6,4 @@ fi
 
 sudo lb build
 
-sudo mv binary rootfs
-sudo tar -zcf server-rootfs.tar.gz rootfs
+mv live-image-armhf.tar.tar rootfs.tar

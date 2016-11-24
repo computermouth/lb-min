@@ -22,7 +22,7 @@ initramfs-tools
 chip-dt-overlays
 chip-power 
 chip-hwtest 
-mtc-utils-mlc
+mtd-utils-mlc
 
 xserver-xorg-video-modesetting
 xserver-xorg-video-armsoc
