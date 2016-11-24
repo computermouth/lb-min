@@ -6,3 +6,5 @@ local
 auto
 cache
 server-rootfs.tar.gz
+chip-u-boot
+chroot.packages.install

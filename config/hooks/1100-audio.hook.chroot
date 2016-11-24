@@ -78,5 +78,3 @@ state.sun4icodec {
         }
 }
 " >/var/lib/alsa/asound.state
-
-alsactl restore

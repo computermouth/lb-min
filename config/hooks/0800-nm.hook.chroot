@@ -24,7 +24,7 @@ grep -q '^\[keyfile\]' "${NM_CONF}" || \
 echo -e "$(cat ${NM_CONF})\n\n[keyfile]\nunmanaged-devices=interface-name:wlan1" | tee ${NM_CONF}
 
 #network-manager default to link-local on usb0 cdc_ethernet
-sudo mkdir -p /etc/NetworkManager/system-connections/
+mkdir -p /etc/NetworkManager/system-connections/
 echo "${NM_USB0_LINKLOCAL_CONNECTION}" \
  | tee /etc/NetworkManager/system-connections/usb0_linklocal &> /dev/null
 
