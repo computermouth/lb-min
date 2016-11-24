@@ -18,11 +18,11 @@ LB_KEYRING_PACKAGES="debian-archive-keyring"
 
 # $LB_LINUX_FLAVOURS: set kernel flavour to use
 # (Default: autodetected)
-LB_LINUX_FLAVOURS="ntc"
+LB_LINUX_FLAVOURS="ntc-mlc"
 
 # $LB_LINUX_PACKAGES: set kernel packages to use
 # (Default: autodetected)
-LB_LINUX_PACKAGES="linux-image-4.4.11"
+LB_LINUX_PACKAGES="linux-image-4.4.13"
 
 # $LB_SECURITY: enable security updates
 # (Default: false)

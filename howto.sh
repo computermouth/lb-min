@@ -15,17 +15,23 @@ lb config\
  --parent-debian-installer-distribution jessie\
  --gzip-options '--best --rsyncable'\
  --initramfs auto\
- --linux-flavours ntc\
- --linux-packages linux-image-4.4.11\
+ --linux-flavours ntc-mlc\
+ --linux-packages linux-image-4.4.13\
  --bootstrap-qemu-arch armhf\
  --bootstrap-qemu-static /usr/bin/qemu-arm-static
 
-echo -e "\
-\#!/bin/bash -x\n\
-for i in boot/vmlinuz* ; do\n\
-    kernel="$(basename "$i")"\n\
-    version="${kernel##vmlinuz-}"\n\
-    initrd="boot/initrd.img-${version}"\n\
-    [ -f "$initrd" ] || update-initramfs -c -k "$version" || true\n\
-done\n\
-" > config/hooks/0500-initrd.hook.chroot
+
+cat << EOF > 0500-initrd.hook.chroot
+#!/bin/bash -x
+for i in boot/vmlinuz* ; do
+    kernel="\$(basename "\$i")"
+    version="\${kernel##vmlinuz-}"
+    initrd="boot/initrd.img-\${version}"
+    [ -f "\$initrd" ] || update-initramfs -c -k "\$version" || true
+    flash-kernel
+    cp /usr/lib/linux-image-\$version/sun5i-r8-chip.dtb /boot/
+    cp /boot/vm* /boot/zImage
+done
+EOF
+
+
