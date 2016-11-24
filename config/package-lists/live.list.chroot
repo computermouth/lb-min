@@ -26,12 +26,17 @@ initramfs-tools
 chip-dt-overlays
 chip-power 
 chip-hwtest 
+chip-mali-modules
+rtl8723bs-bt
+rtl8723bs-mp-driver-common
+rtl8723bs-mp-driver-modules
 mtd-utils-mlc
 
 xserver-xorg-video-modesetting
 xserver-xorg-video-armsoc
 xserver-xorg-video-fbdev
 xserver-xorg-input-evdev
+xorg
 lightdm
 git
 dh-make
