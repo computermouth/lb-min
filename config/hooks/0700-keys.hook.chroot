@@ -11,6 +11,8 @@ rm -f /etc/ssh/ssh_host_*\n\
 /usr/bin/ssh-keygen -t ed25519 -N '' -f /etc/ssh/ssh_host_ed25519_key\n\
 alsactl restore\n\
 systemctl restart ssh\n\
+echo chip >/etc/hostname
+echo -e \"127.0.0.1\\tchip\" >/etc/hosts
 mv -f /etc/rc.local.orig /etc/rc.local\n" | tee /etc/rc.local >/dev/null
 
 chmod a+x /etc/rc.local

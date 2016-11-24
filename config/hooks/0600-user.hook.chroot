@@ -4,7 +4,3 @@ echo -e "chip\nchip\n" | passwd
 
 echo -e "chip\nchip\n\n\n\n\n\nY\n" | adduser chip
 adduser chip sudo
-
-echo "chip" >/etc/hostname
-echo -e "127.0.0.1\tchip" >/etc/hosts
-
