@@ -1,0 +1,19 @@
+#!/bin/bash
+
+mkdir -p /etc/skel
+pushd /etc/skel
+pwd
+ls
+#git clone https://github.com/computermouth/rc
+wget https://github.com/computermouth/rc/archive/noneon.zip
+unzip noneon.zip
+mv rc-noneon rc
+pwd
+ls
+pushd rc
+
+sed -i 's%printMsgs "dialog" "NOTICE:%#printMsgs "dialog" "NOTICE:%' scriptmodules/admin/setup.sh
+sed -i '496,498s%choice=$(%choice=I \#%' scriptmodules/admin/setup.sh
+sed -i '510,512s%dialog --defaultno%#dialog --defaultno%' scriptmodules/admin/setup.sh
+
+__platform=armv7-mali ./retropie_setup.sh
